@@ -50,14 +50,16 @@ youngest<-"Cenozoic"
 file_format<-".xls"
 get_records<-TRUE
 get_localities<-TRUE
+get_abundances<-FALSE
 get_taxonomy<-TRUE
-# if "get_records," "get_localities" and "get_taxonomy" all are set to 'TRUE' then this basically gives you everything about Paleozoic gastropods. 
-paleodb_data_download(taxon,oldest,youngest,get_records,get_localities, get_taxonomy,file_format)
+file_format<-".xls"
+# if "get_records," "get_localities" and "get_taxonomy" all are set to 'TRUE' then this basically gives you everything about Cenozoic caviids. 
+paleodb_data_download(taxon,oldest,youngest,get_records,get_localities,get_abundances,get_taxonomy,file_format)
 
 # download all occurrence, collection and taxonomic data for some taxonomic group
 taxon<-"Cathaysiorthidae"
 file_format<-".xls"
-# This will just give you everything we've got on Trilobites
+# This will just give you everything we've got on this taxonomic group
 get_a_group(taxon,file_format)
 
 oldest<-"Ordovician"
@@ -71,7 +73,7 @@ get_localities<-TRUE
 get_abundances<-FALSE
 get_taxonomy<-TRUE
 taxon_level<-"species"
-# this gets occurrences, localities, taxonomy and abundances: with options for all.  (It does not mean much wihtout occurrences, however!)
+# this gets occurrences, localities, taxonomy and abundances: with options for all.  (It does not mean much without occurrences, however!)
 paleodb_data_download(taxon,oldest,youngest,get_records,get_localities,get_abundances,get_taxonomy,file_format)
 # this gets only occurrences with abundances given as specimens or individuals
 paleodb_abundance_data_download(taxon,oldest,youngest,get_localities,file_format)
@@ -88,8 +90,9 @@ get_records<-TRUE
 get_localities<-TRUE
 get_abundances<-FALSE
 get_taxonomy<-TRUE
+environment<-"marine"
 # this filters occurrences for particular countries or sets of countries
-paleodb_data_download_by_country(taxon,oldest,youngest,get_records,get_localities,get_abundances,get_taxonomy,country,file_format)
+paleodb_data_download_by_country(taxon,oldest,youngest,get_records,get_localities,get_abundances,get_taxonomy,environment,country=country,file_format)
 
 taxon<-"Cetacea"
 file_format<-".xls"
