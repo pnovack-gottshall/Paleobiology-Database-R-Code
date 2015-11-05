@@ -8,7 +8,7 @@ youngest<-"Ordovician"
 start_date<-"2015-01-01"
 end_date<-"2015-12-31"
 file_format<-".xls"
-# this will return all Paleozoic gastropod entered in January-April of 2015, with separate .xls files for species with and without taxonomic data. 
+# this will return all Paleozoic trilobites entered in January-April of 2015, with separate .xls files for species with and without taxonomic data. 
 paleodb_occurrence_curation(taxon,oldest,youngest,start_date,end_date,file_format)
 
 # Find genera with gaps in their range ≥ specified amount (signif_gap).  Returns list giving latest occurrence on old end of range and earliest occurrence on the young end fo the range
